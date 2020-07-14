@@ -14,19 +14,22 @@ class OrdersController
     public function index()
     {
         $user = Auth::user();
-        $orders = $user->orders()->where('order_status', '=', 2)->paginate(3);
-        if (!empty($orders)){
-            return view('orders', [
-                'title' => 'Заказы – ГеймсМаркет',
-                'orders' => $orders,
-            ]);
+        if (!empty($user)) {
+            $orders = $user->orders()->where('order_status', '=', 2)->paginate(3);
+            if (!empty($orders)) {
+                return view('orders', [
+                    'title' => 'Заказы – ГеймсМаркет',
+                    'orders' => $orders,
+                ]);
+            } else {
+                return view('orders', [
+                    'title' => 'Заказы – ГеймсМаркет',
+                    'orders' => [],
+                ]);
+            }
         } else {
-            return view('orders', [
-                'title' => 'Заказы – ГеймсМаркет',
-                'orders' => [],
-            ]);
+            return 'Пожалуйста, войдите на сайт, чтобы посмотреть свои заказы';
         }
-
     }
 
     public function buy(int $productId)

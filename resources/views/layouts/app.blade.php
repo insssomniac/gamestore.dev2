@@ -82,6 +82,15 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+                                    <a class="dropdown-item" href="{{ route('admin.apiTokenUpdate') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('updateKey-form').submit();">
+                                        {{ __('Generate API Key') }}
+                                    </a>
+
+                                    <form id="updateKey-form" action="{{ route('admin.apiTokenUpdate') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                                 </div>
                             </li>
                         @endguest

@@ -16,3 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['prefix' => '/v1/', 'namespace' => 'Api\V1', 'middleware' => 'auth:api'], function() {
+    Route::post('category/{category}', 'ProductsController@category');
+    Route::post('product/{product}', 'ProductsController@one');
+});

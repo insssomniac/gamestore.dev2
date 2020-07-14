@@ -75,6 +75,11 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'admin'], function() {
         Route::get('/delete/{email}', 'EmailsController@delete')->name('admin.emails.delete');
     });
 
+    //API Tokens
+    Route::group(['prefix' => '/admin/api'], function (){
+        Route::post('/update', 'ApiTokenController@update')->name('admin.apiTokenUpdate');
+    });
+
 
 });
 
