@@ -1,0 +1,59 @@
+
+.admin__container {
+    width: 1400px;
+}
+
+.card--margin-bottom {
+    margin-bottom: 20px;
+}
+
+.card--margin-bottom:last-child {
+    margin-bottom: 0;
+}
+
+.admin__orders {
+    padding: 15px 0 15px 0;
+    border-bottom: lightgray 1px solid;
+}
+
+.admin__card {
+    padding: 10px 0 10px 0;
+    border-bottom: grey 1px solid;
+}
+
+.card-header--bold {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.admin__product-card, .admin__news-card {
+    display: flex;
+    justify-content: center;
+    width: 99%;
+    margin-bottom: 30px;
+}
+
+.admin__image {
+    max-width: 250px;
+}
+
+.admin__image--small {
+    max-width: 30px;
+}
+
+.admin__textarea, .admin__text {
+width: 900px;
+}
+
+.column-title {
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.action-buttons {
+    margin-right: 5px;
+}
+
+.action-buttons:last-child {
+    margin-right: 0;
+}
