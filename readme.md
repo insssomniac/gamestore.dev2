@@ -1,2 +1,3 @@
-# laravel.week5.loftphp
+# Gamestore
  
+ This is a project for training and experimentation. 
