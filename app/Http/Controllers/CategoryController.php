@@ -7,10 +7,10 @@ use App\Category;
 
 class CategoryController
 {
-    public function index(int $category)
+    public function index(Category $category)
     {
-        $categoryName = Category::find($category)->name;
-        $categoryProducts = Category::find($category)->products()->paginate(6);
+        $categoryName = $category->name;
+        $categoryProducts = $category->products()->paginate(6);
 
         return view('category', [
             'title' => 'Игры в разделе ' . $categoryName . ' – ГеймсМаркет',

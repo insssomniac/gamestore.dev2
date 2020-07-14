@@ -8,10 +8,8 @@ use App\Product;
 
 class ProductsController extends Controller
 {
-    public function productView(int $id)
+    public function productView(Product $product)
     {
-        $product = Product::find($id);
-
         $title = $product->name . ' – ГеймсМаркет';
 
         return view('product', [
